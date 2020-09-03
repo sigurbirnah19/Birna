@@ -4,10 +4,18 @@ guess = int(input("Initial guess: "))
 tolerance = float(input("What tolerance: "))
 
 # Implement the Babylonian square root algorithm
-counter = 1
-while( abs(guess - prev_guess) > tolerance)
-    counter += 1
-    
+count = 0
+prev_guess = 0
+
+while( abs(guess - prev_guess) > tolerance):
+    count += 1 
+
+    quotient = number / guess
+
+    new_guess = (quotient + guess)/2
+
+    prev_guess = guess
+    guess = new_guess
 
 # Don't change these lines
 print("Square root of", number, "is", round(guess, 4))
